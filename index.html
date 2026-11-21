@@ -82,9 +82,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .prog b { position: absolute; top: 0; bottom: 0; width: 3px; background: var(--bg); }
 .prog i { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--salmon); }
 
-main { position: relative; z-index: 1; flex: 1; min-height: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); align-items: center; gap: clamp(20px, 4vw, 64px); padding: 12px clamp(16px, 4vw, 64px) 16px; }
-.narr { display: flex; flex-direction: column; gap: 22px; max-width: 680px; justify-self: start; }
-.narr > .orb { width: clamp(80px, 11vh, 130px); height: clamp(80px, 11vh, 130px); }
+main { position: relative; z-index: 1; flex: 1; min-height: 0; width: 100%; max-width: 1320px; margin-inline: auto; display: grid; grid-template-columns: minmax(0, 410px) minmax(0, 680px); grid-template-rows: minmax(0, 1fr); align-items: center; justify-content: center; gap: clamp(32px, 5vw, 80px); padding: 20px clamp(16px, 2.3vw, 32px) 24px; }
+.narr { display: flex; flex-direction: column; gap: clamp(12px, 2vh, 22px); width: 100%; min-width: 0; max-width: 680px; justify-self: stretch; }
+.narr > .orb { width: clamp(64px, 9vh, 104px); height: clamp(64px, 9vh, 104px); align-self: flex-start; }
 #cap { margin: 0; font-size: clamp(24px, 2.6vw, 40px); line-height: 1.3; font-weight: 600; min-height: 4.4em; }
 #cap .w { color: rgba(244, 247, 250, .28); transition: color .2s; }
 #cap .w.on { color: var(--text); }
@@ -107,7 +107,7 @@ main { position: relative; z-index: 1; flex: 1; min-height: 0; display: grid; gr
 .btn { border: 0; border-radius: 999px; padding: 12px 26px; font-weight: 600; font-size: 16px; background: var(--salmon); color: var(--on-salmon); align-self: flex-start; }
 
 /* ---------- the phone ---------- */
-.phone-box { position: relative; height: 100%; min-height: 0; width: 410px; grid-column: 1; grid-row: 1; }
+.phone-box { position: relative; height: 100%; min-height: 0; min-width: 0; width: 100%; grid-column: 1; grid-row: 1; }
 .narr { grid-column: 2; grid-row: 1; }
 .phone {
   position: absolute; left: 50%; top: 50%; width: 410px; height: 864px; border-radius: 62px; background: #050B12; padding: 10px;
@@ -531,6 +531,6 @@ body.interactive .audio-meta {display:none;}
 
 <audio id="narration" preload="auto" src="assets/sanad-mansour-ar.mp3"></audio>
 <script src="assets/timings.js"></script>
-<script src="assets/player.js"></script>
+<script src="assets/player.js?v=fullscreen-2"></script>
 </body>
 </html>

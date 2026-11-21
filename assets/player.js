@@ -9,7 +9,7 @@
   const sceneTitles = ['هلا، أنا سَنَد', 'نورة', 'التنبيه', 'الحل', 'كيف حسبتها؟', 'الخيارات', 'القرار لها', 'تم', 'كل خطوة محسوبة', 'سَنَد'];
   const phaseIds = ['pOffer', 'pWhy', 'pOpts', 'pConfirm', 'pWorking', 'pDone'];
   let interactive = false, liveFrame = null, loadTimer = null, dragResume = null, phoneReady = false;
-  let currentScene = -1, lastRendered = -1, fitted = {w:'', k:''}, fitQueued = false;
+  let currentScene = -1, lastRendered = -1, fitted = {k:''}, fitQueued = false;
   let total = data.duration, playbackError = '', playAttempt = 0;
   const A = data.actions;
   const clamp = value => Math.max(0, Math.min(1, value));
@@ -21,12 +21,9 @@
 
   function fit() {
     fitQueued = false;
-    const main = document.querySelector('main'), box = $('phoneBox');
-    const stacked = getComputedStyle(main).gridTemplateColumns.split(' ').length < 2;
-    const maxW = stacked ? main.clientWidth - 24 : main.clientWidth*.45;
-    const k = Math.max(.2, Math.min(box.clientHeight/864, maxW/410, 1.05)).toFixed(3);
-    const w = stacked ? '100%' : Math.round(410*k)+'px';
-    if (w !== fitted.w) {box.style.width = w; fitted.w = w;}
+    const box = $('phoneBox');
+    // CSS owns the columns. Fit inside the allocated slot without changing its width.
+    const k = Math.max(.1, Math.min(box.clientHeight/864, box.clientWidth/410, 1.05)).toFixed(4);
     if (k !== fitted.k) {$('phone').style.transform = 'translate(-50%, -50%) scale('+k+')'; fitted.k = k;}
   }
   function fitSoon() {if (!fitQueued) {fitQueued = true; requestAnimationFrame(fit);}}
