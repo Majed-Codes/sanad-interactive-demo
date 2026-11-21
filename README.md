@@ -6,6 +6,10 @@ An Arabic, audio-synchronized walkthrough that becomes an interactive banking pr
 
 Click **ابدأ العرض** to play. The ElevenLabs Mansour recording drives the Arabic word highlights, phone animations, and progress bar. Pause, replay, and seeking use the same audio clock. At the end, the interactive phone opens automatically. **جرّب بنفسك** skips directly to it.
 
+## Video for Canva and PDF
+
+[Watch the Arabic recording](https://majed-codes.github.io/sanad-interactive-demo/video/). The 1080p MP4 uses the supplied recording, timed Arabic captions, and phone animations. After playback, the page opens the interactive phone. For PDF decks, link a cover image to this watch page; PDF exports do not play the video inline.
+
 ## Interactive phone
 
 Try the shortfall alert, its calculation, alternative plans, confirmation, transfers between the synthetic accounts, Arabic/English settings, customer selection, and the rule-based chat. The initial Noura scenario has SAR 4,200 in checking and SAR 12,000 in savings. Confirming the SAR 500 transfer gives SAR 4,700 / SAR 11,500, with a projected minimum of SAR +150.

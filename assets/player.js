@@ -238,4 +238,5 @@
   });
   for(const scene of data.scenes.slice(1)) {const tick=document.createElement('b');tick.style.left=(scene.start/total*100)+'%';$('prog').appendChild(tick);}
   updateControls();render(0,true);fitSoon();requestAnimationFrame(frame);
+  if(new URLSearchParams(location.search).get('interactive')==='1')enterInteractive();
 })();
